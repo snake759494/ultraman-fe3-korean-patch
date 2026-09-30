@@ -1,0 +1,24 @@
+# 게임 원본·산출물 (배포하지 않음)
+*.iso
+*.xdelta
+*.p2s
+*.bin
+*.BIN
+SLPS_254.41
+work/
+
+# 글꼴·외부 실행 파일·이미지
+*.ttf
+*.otf
+*.exe
+*.dll
+*.png
+*.jpg
+*.zip
+*.7z
+
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+pcsx2/
