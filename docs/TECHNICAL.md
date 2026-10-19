@@ -27,5 +27,5 @@
 6. 동영상: 음성 대사가 있으면 받아쓰기→번역→자막 합성(이전 작업 방식)
 
 ## 4. 결과물
-- `Ultraman - Fighting Evolution 3 (Japan) (Korean).iso`, `UltramanFE3_KO_v1.0.xdelta` (`-e -9 -S none -A`)
+- `Ultraman - Fighting Evolution 3 (Japan) (Korean).iso`, `UltramanFE3_PS2_KO_v1.0.1.xdelta` (`-e -9 -S none -A`)
 - `tools/`, `translation/`, `README.md`

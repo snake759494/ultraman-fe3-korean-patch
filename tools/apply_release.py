@@ -1,7 +1,7 @@
 """원본 ISO 의 해시를 확인하고 xdelta 를 적용한 뒤 결과 해시까지 검사한다.
 
 사용:
-  python tools/apply_release.py --xdelta <xdelta3.exe> --source "Ultraman - Fighting Evolution 3 (Japan).iso" --patch UltramanFE3_PS2_KO_v1.0.xdelta --output "Ultraman - Fighting Evolution 3 (Japan) (Korean).iso"
+  python tools/apply_release.py --xdelta <xdelta3.exe> --source "Ultraman - Fighting Evolution 3 (Japan).iso" --patch UltramanFE3_PS2_KO_v1.0.1.xdelta --output "Ultraman - Fighting Evolution 3 (Japan) (Korean).iso"
 
 기존 출력 파일은 덮어쓰지 않는다. 원본·패치·결과 중 하나라도 해시가 다르면 실패로 끝낸다.
 """
@@ -9,9 +9,9 @@ import argparse, hashlib, os, subprocess, sys
 
 SOURCE_SIZE = 2811789312
 SOURCE_SHA256 = "54b801de3fb5d0185c822bfadd47d49d19c9fdba7d9ca8246a8a1eb8f3ae57bd"
-PATCH_SHA256 = "8337162036c224a3497ef85f143232ee5f9a65aac33fa323f4f2a9546848d2cd"
+PATCH_SHA256 = "1037b2dda094cd1f952b58286ac57e564bc2ddb712e9e5569646364f4803ba9d"
 OUTPUT_SIZE = 2811789312
-OUTPUT_SHA256 = "52412e4f08f21ae91a3e90f564e7a5725a62cf21a706bf2c702e21228025b0a9"
+OUTPUT_SHA256 = "720a5e9ad315e36e600627d8b9fba4e62b9c619d9a12d833268888c46c7936aa"
 
 
 def sha256(path):

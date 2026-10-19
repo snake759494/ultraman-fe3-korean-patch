@@ -36,13 +36,15 @@ python tools/g_auto.py
 python tools/g_rows.py mcard
 python tools/g_rows.py misc_rows
 python tools/g_boxes.py
+python tools/g_custom.py     # g_boxes.py 다음에 (커스텀 타입 목록 라벨)
+python tools/g_menu.py       # 타이틀 메뉴 (팔레트 2개 동시 양자화)
 ```
 
 ## 디스크 이미지
 
 ```
 python tools/build.py      # -> Ultraman - Fighting Evolution 3 (Japan) (Korean).iso
-xdelta3 -e -9 -S none -A -s "Ultraman - Fighting Evolution 3 (Japan).iso" "Ultraman - Fighting Evolution 3 (Japan) (Korean).iso" UltramanFE3_PS2_KO_v1.0.xdelta
+xdelta3 -e -9 -S none -A -s "Ultraman - Fighting Evolution 3 (Japan).iso" "Ultraman - Fighting Evolution 3 (Japan) (Korean).iso" UltramanFE3_PS2_KO_v1.0.1.xdelta
 ```
 
 `tools/emu.py` 는 휴대용 PCSX2(`UFE3_EMU` 환경변수 또는 저장소 옆 `pcsx2/`)를 띄워 화면을 캡처하는 검증 도구입니다.

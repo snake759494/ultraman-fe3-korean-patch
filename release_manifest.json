@@ -1,17 +1,17 @@
 {
- "version": "v1.0",
- "date": "2026-09-30",
+ "version": "v1.0.1",
+ "date": "2026-10-19",
  "game": "Ultraman Fighting Evolution 3 (Japan) / SLPS-25441 / PS2 (DVD, ISO)",
- "asset": "UltramanFE3_PS2_KO_v1.0.xdelta",
- "asset_size": 3364937,
- "asset_sha256": "8337162036c224a3497ef85f143232ee5f9a65aac33fa323f4f2a9546848d2cd",
+ "asset": "UltramanFE3_PS2_KO_v1.0.1.xdelta",
+ "asset_size": 3363495,
+ "asset_sha256": "1037b2dda094cd1f952b58286ac57e564bc2ddb712e9e5569646364f4803ba9d",
  "xdelta_options": "xdelta3 3.1.0, -e -9 -S none -A (no secondary compression, no application header)",
  "source_iso_size": 2811789312,
  "source_iso_md5": "a4c445b0455658b1bfbd96ff8e7fe5ab",
  "source_iso_sha1": "69fb796ecc226724557ff67c670b483889bde82e",
  "source_iso_sha256": "54b801de3fb5d0185c822bfadd47d49d19c9fdba7d9ca8246a8a1eb8f3ae57bd",
  "output_iso_size": 2811789312,
- "output_iso_md5": "51acdcf6c2babdb90601ffb26e8c7ab0",
- "output_iso_sha1": "5dfaf565260e762b5a3929afd9acc32ad726b51d",
- "output_iso_sha256": "52412e4f08f21ae91a3e90f564e7a5725a62cf21a706bf2c702e21228025b0a9"
+ "output_iso_md5": "e33e59fb2c362742f65e869116b59bad",
+ "output_iso_sha1": "a6324da26b913e78abd095d86a482a15bb3d6375",
+ "output_iso_sha256": "720a5e9ad315e36e600627d8b9fba4e62b9c619d9a12d833268888c46c7936aa"
 }

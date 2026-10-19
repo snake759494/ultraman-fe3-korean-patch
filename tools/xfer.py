@@ -22,14 +22,17 @@ def xfer_region(idx, tidx, box, text, st):
     ys, xs = np.nonzero(ink)
     oy0, oy1 = ys.min(), ys.max() + 1
     dep = depth(np.pad(ink, 1))[1:-1, 1:-1]
-    feat = np.stack([dep[ink] * 1.0, (ys - oy0) / max(1, oy1 - oy0) * st.get('yw', 6.0)], 1)
+    ox0, ox1 = xs.min(), xs.max() + 1
+    axis = st.get('axis', 'y')
+    rel = (ys - oy0) / max(1, oy1 - oy0) if axis == 'y' else (xs - ox0) / max(1, ox1 - ox0)
+    feat = np.stack([np.minimum(dep[ink], st.get('dmax', 99)) * 1.0, rel * st.get('yw', 6.0)], 1)
     vals = sub[ink]
     tree = cKDTree(feat)
     # 새 글자 마스크
     H, W = sub.shape
     can = np.zeros((H, W, 4), np.float32)
     sw = st.get('stroke', 3)
-    rs = dict(font=st.get('font', 'H'), size=st.get('size', int((oy1 - oy0) * 1.12)), italic=st.get('italic', 0), align=st.get('align', 'c'),
+    rs = dict(font=st.get('font', 'H'), size=st.get('size', int((oy1 - oy0) * 1.12)), italic=st.get('italic', 0), align=st.get('align', 'c'), valign=st.get('valign', 'm'),
               squeeze=st.get('squeeze', 0.6), fill=[255, 255, 255], strokes=[[sw, [255, 255, 255]]] if sw else [])
     render.draw(can, text, (st.get('pad', 1), int(oy0), W - st.get('pad', 1), int(oy1)), rs)
     nm = can[..., 3] > 110
@@ -37,8 +40,9 @@ def xfer_region(idx, tidx, box, text, st):
     if nm.any():
         ny, nx = np.nonzero(nm)
         nd = depth(np.pad(nm, 1))[1:-1, 1:-1]
-        ny0, ny1 = ny.min(), ny.max() + 1
-        q = np.stack([nd[nm], (ny - ny0) / max(1, ny1 - ny0) * st.get('yw', 6.0)], 1)
+        ny0, ny1 = ny.min(), ny.max() + 1; nx0, nx1 = nx.min(), nx.max() + 1
+        nrel = (ny - ny0) / max(1, ny1 - ny0) if axis == 'y' else (nx - nx0) / max(1, nx1 - nx0)
+        q = np.stack([np.minimum(nd[nm], st.get('dmax', 99)), nrel * st.get('yw', 6.0)], 1)
         _, k = tree.query(q)
         out[nm] = vals[k]
         # 다수결 3×3 (잡점 제거)

@@ -43,15 +43,19 @@ def elf_uv(elf):
     w1 = {int(k): v for k, v in json.load(open(p1)).items()}; w2 = {int(k): v for k, v in json.load(open(p2)).items()}
     n = 0
     for base in SELNAME_TABLES:
-        r = 0; tex = 1; prev = -1
+        # y 가 0 으로 돌아갈 때마다 새 묶음. 묶음 길이 22 = 이름판1, 18 = 이름판2 (1P·2P 용으로 각각 두 번씩 나옴)
+        groups = []; r = 0
         while True:
             x, y, w, h, m, z = struct.unpack_from('<6i', elf, base + 24 * r)
             if h != 46: break
-            if y <= prev: tex = 2 if tex == 1 else 1
-            prev = y
-            nw = (w1 if tex == 1 else w2).get(y)
-            if nw: struct.pack_into('<i', elf, base + 24 * r + 8, nw); n += 1
-            r += 1
+            if y == 0: groups.append([])
+            groups[-1].append((r, y)); r += 1
+        for g in groups:
+            table = w1 if len(g) == 22 else w2
+            assert len(g) in (22, 18), (hex(base), len(g))
+            for r, y in g:
+                nw = table.get(y)
+                if nw: struct.pack_into('<i', elf, base + 24 * r + 8, nw); n += 1
     print('이름 UV 폭 수정', n)
 
 def main(dst=DST):

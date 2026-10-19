@@ -1,10 +1,10 @@
 # 울트라맨 파이팅 에볼루션 3 PS2 한글패치
 
-PS2 일본판 **ウルトラマン Fighting Evolution 3 (SLPS-25441)** 용 비공식 한국어 패치입니다. 이 게임은 화면의 일본어가 모두 그림(텍스처)으로 들어 있어, 일본어가 그려진 그림 **493장**을 전수 조사해 한글로 다시 그렸습니다. 현재 배포판은 **v1.0 (2026-09-30)** 입니다.
+PS2 일본판 **ウルトラマン Fighting Evolution 3 (SLPS-25441)** 용 비공식 한국어 패치입니다. 이 게임은 화면의 일본어가 모두 그림(텍스처)으로 들어 있어, 일본어가 그려진 그림 **493장**을 전수 조사해 한글로 다시 그렸습니다. 현재 배포판은 **v1.0.1 (2026-10-19)** 입니다.
 
 [패치 다운로드](https://github.com/snake759494/ultraman-fe3-korean-patch/releases/latest) · [기술 설명](docs/TECHNICAL.md) · [재빌드](docs/BUILD.md) · [변경 기록](CHANGELOG.md) · [권리 안내](RIGHTS.md)
 
-릴리즈 첨부 파일은 **UltramanFE3_PS2_KO_v1.0.xdelta 하나**입니다. 저장소에는 제작 소스·번역·검증 자료만 공개합니다. 원본 및 완성 디스크 이미지, 추출한 실행파일·텍스처, 글꼴 파일, 외부 실행 파일은 포함하지 않습니다. GitHub 가 자동 생성하는 Source code ZIP/TAR 는 저장소 소스의 압축본이며 게임 파일이 아닙니다.
+릴리즈 첨부 파일은 **UltramanFE3_PS2_KO_v1.0.1.xdelta 하나**입니다. 저장소에는 제작 소스·번역·검증 자료만 공개합니다. 원본 및 완성 디스크 이미지, 추출한 실행파일·텍스처, 글꼴 파일, 외부 실행 파일은 포함하지 않습니다. GitHub 가 자동 생성하는 Source code ZIP/TAR 는 저장소 소스의 압축본이며 게임 파일이 아닙니다.
 
 > ⚠️ `translation/` 폴더에는 울트라 모드의 미션 설명·이벤트 자막·해금 알림 등 번역문 전체가 들어 있어 **스포일러**가 포함됩니다. 이 README 에는 줄거리 내용을 적지 않았습니다.
 
@@ -24,11 +24,11 @@ PS2 일본판 **ウルトラマン Fighting Evolution 3 (SLPS-25441)** 용 비�
 | **원본 ISO MD5** | `a4c445b0455658b1bfbd96ff8e7fe5ab` |
 | 원본 ISO SHA-1 | `69fb796ecc226724557ff67c670b483889bde82e` |
 | 원본 ISO SHA-256 | `54b801de3fb5d0185c822bfadd47d49d19c9fdba7d9ca8246a8a1eb8f3ae57bd` |
-| xdelta 파일 크기 | 3,364,937 바이트 |
-| xdelta SHA-256 | `8337162036c224a3497ef85f143232ee5f9a65aac33fa323f4f2a9546848d2cd` |
+| xdelta 파일 크기 | 3,363,495 바이트 |
+| xdelta SHA-256 | `1037b2dda094cd1f952b58286ac57e564bc2ddb712e9e5569646364f4803ba9d` |
 | 적용 결과 ISO 크기 | 2,811,789,312 바이트 (원본과 같음) |
-| 적용 결과 ISO SHA-1 | `5dfaf565260e762b5a3929afd9acc32ad726b51d` |
-| 적용 결과 ISO SHA-256 | `52412e4f08f21ae91a3e90f564e7a5725a62cf21a706bf2c702e21228025b0a9` |
+| 적용 결과 ISO SHA-1 | `a6324da26b913e78abd095d86a482a15bb3d6375` |
+| 적용 결과 ISO SHA-256 | `720a5e9ad315e36e600627d8b9fba4e62b9c619d9a12d833268888c46c7936aa` |
 
 원본 게임 파일은 사용자가 별도로 준비해야 합니다.
 
@@ -44,7 +44,7 @@ Get-FileHash -Algorithm MD5 -LiteralPath '.\Ultraman - Fighting Evolution 3 (Jap
 
 ### xdelta UI 사용
 
-1. 릴리즈에서 `UltramanFE3_PS2_KO_v1.0.xdelta` 를 받습니다.
+1. 릴리즈에서 `UltramanFE3_PS2_KO_v1.0.1.xdelta` 를 받습니다.
 2. xdelta3 패치를 지원하는 도구의 **Apply Patch** 기능을 엽니다.
 3. **Patch** 에 xdelta 파일, **Source File** 에 해시가 일치하는 원본 `.iso` 를 선택합니다.
 4. **Output File** 에 새 파일명(예: `Ultraman - Fighting Evolution 3 (Japan) (Korean).iso`)을 지정합니다.
@@ -54,13 +54,13 @@ xdelta 는 호환성을 위해 2차 압축과 파일 경로 헤더 없이 만들
 ### 명령줄 사용
 
 ```powershell
-.\xdelta3.exe -d -s '.\Ultraman - Fighting Evolution 3 (Japan).iso' '.\UltramanFE3_PS2_KO_v1.0.xdelta' '.\Ultraman - Fighting Evolution 3 (Japan) (Korean).iso'
+.\xdelta3.exe -d -s '.\Ultraman - Fighting Evolution 3 (Japan).iso' '.\UltramanFE3_PS2_KO_v1.0.1.xdelta' '.\Ultraman - Fighting Evolution 3 (Japan) (Korean).iso'
 ```
 
 해시를 자동 검사하는 도구도 있습니다(Python 3 + xdelta3 필요, 기존 출력 파일은 덮어쓰지 않음).
 
 ```powershell
-python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Ultraman - Fighting Evolution 3 (Japan).iso' --patch '.\UltramanFE3_PS2_KO_v1.0.xdelta' --output '.\Ultraman - Fighting Evolution 3 (Japan) (Korean).iso'
+python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Ultraman - Fighting Evolution 3 (Japan).iso' --patch '.\UltramanFE3_PS2_KO_v1.0.1.xdelta' --output '.\Ultraman - Fighting Evolution 3 (Japan) (Korean).iso'
 ```
 
 ### PCSX2 에서 실행
@@ -94,6 +94,7 @@ python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Ultraman - Fi
 
 - 인게임 확인은 PCSX2 v2.2.0 으로 타이틀·캐릭터 선택·대전·튜토리얼·스토리 선택·미션 설명 화면까지 했습니다. 결과·커스텀·해금 알림 등은 그림 단위로만 확인했습니다.
 - 원문 폭이 좁았던 이름·문구는 가로로 압축되어 조금 좁아 보일 수 있습니다.
+- 레전드·저스티스 등 숨겨진 캐릭터의 선택 화면 이름은 표시 폭 표만 고쳐서 확인했고, 해금 상태의 실제 화면은 보지 못했습니다.
 - 다른 화면에서 글자 끝이 잘리는 곳을 발견하면 이슈로 알려 주세요. 실기에서의 동작은 확인하지 못했습니다.
 
 ## 저장소 구성
